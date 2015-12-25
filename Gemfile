@@ -47,3 +47,5 @@ group :development, :test do
   # gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
+ruby "2.1.1"  # Dev done with Ruby 2.1.1p76
