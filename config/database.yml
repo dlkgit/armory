@@ -8,9 +8,17 @@
 #   adapter: sqlite3
 #   pool: 5
 #   timeout: 5000
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 5
+#   socket: /var/run/mysqld/mysqld.sock
+#   username: armory
+
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
+  database: armory
   pool: 5
   socket: /var/run/mysqld/mysqld.sock
   username: armory
@@ -31,3 +39,5 @@ test:
 production:
   <<: *default
   database: armory
+  username: armory
+  password: gardentomatoes
