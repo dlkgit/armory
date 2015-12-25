@@ -48,4 +48,4 @@ group :development, :test do
 end
 
 gem 'rails_12factor', group: :production
-ruby "2.1.1"  # Dev done with Ruby 2.1.1p76
+ruby "2.1.8"  # Dev done with Ruby 2.1.1p76
