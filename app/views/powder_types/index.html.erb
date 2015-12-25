@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Powder Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @powder_types.each do |powder_type| %>
+      <tr>
+        <td><%= powder_type.name %></td>
+        <td><%= link_to 'Show', powder_type %></td>
+        <td><%= link_to 'Edit', edit_powder_type_path(powder_type) %></td>
+        <td><%= link_to 'Destroy', powder_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Powder type', new_powder_type_path %>

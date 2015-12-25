@@ -1,0 +1,2 @@
+module GunTypesHelper
+end

@@ -1,0 +1,63 @@
+<%= form_for(@gun) do |f| %>
+  <% if @gun.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gun.errors.count, "error") %> prohibited this gun from being saved:</h2>
+      <ul>
+      <% @gun.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :manufacturer_id %><br>
+    <% mfgr_array = Manufacturer.all.map{|mfgr| [mfgr.name, mfgr.id]} %>
+    <%= f.select(:manufacturer_id, options_for_select(mfgr_array), {include_blank: true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :gun_type_id %><br>
+    <% gun_type_array = GunType.all.map{|type| [type.name, type.id]} %>
+    <%= f.select(:gun_type_id, options_for_select(gun_type_array), {include_blank: true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :serial_number %><br>
+    <%= f.text_field :serial_number %>
+  </div>
+  <div class="field">
+    <%= f.label :year_manufactured %><br>
+    <%= f.text_field :year_manufactured %>
+  </div>
+  <div class="field">
+    <%= f.label :barrel_length %><br>
+    <%= f.text_field :barrel_length %>
+  </div>
+  <div class="field">
+    <%= f.label :bore_size %><br>
+    <%= f.text_field :bore_size %>
+  </div>
+  <div>
+    <%= f.label :cartridge %><br>
+    <%= f.text_field :cartridge %>
+  </div>
+  <div class="field">
+    <%= f.label :powder_type_id %><br>
+    <% powder_type_array = PowderType.all.map{|type| [type.name, type.id]}.sort %>
+    <%= f.select(:powder_type_id, options_for_select(powder_type_array), {include_blank: true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :date_acquired %><br>
+    <%= f.text_field :date_acquired %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

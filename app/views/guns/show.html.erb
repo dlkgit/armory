@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @gun.id %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @gun.manufacturer ? @gun.manufacturer.name : "" %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @gun.model %>
+</p>
+
+<p>
+  <strong>Gun type:</strong>
+  <%= @gun.gun_type_id %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @gun.serial_number %>
+</p>
+
+<p>
+  <strong>Year Manufactured:</strong>
+  <%= @gun.year_manufactured %>
+</p>
+
+<p>
+  <strong>Barrel length:</strong>
+  <%= @gun.barrel_length %>
+</p>
+
+<p>
+  <strong>Bore size:</strong>
+  <%= @gun.bore_size %>
+</p>
+
+<p>
+  <strong>Cartridge</strong>
+  <%= @gun.cartridge %>
+</p>
+
+<p>
+  <strong>Powder:</strong>
+  <%= @gun.powder_type_id %>
+</p>
+
+<p>
+  <strong>Date acquired:</strong>
+  <%= @gun.date_acquired %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @gun.notes %>
+</p>
+
+<%= link_to 'Edit', edit_gun_path(@gun) %> |
+<%= link_to 'Back', guns_path %>

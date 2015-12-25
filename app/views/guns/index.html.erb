@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Guns</h1>
+
+<table cellspacing="10">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Gun type</th>
+      <th>Serial number</th>
+      <th>Barrel length</th>
+      <th>Bore size</th>
+      <th>Cartridge</th>
+      <th>Propellent</th>
+      <th>Year Manufactured</th>
+      <th>Date acquired</th>
+      <!-- <th>Notes</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guns.each do |gun| %>
+      <tr>
+        <td><%= link_to(gun.id, gun_path(gun), :class => "detail_link", :id => "main-detail-link") %></td>
+        <td><%= gun.manufacturer ? link_to(gun.manufacturer.name, manufacturer_path(gun.manufacturer), :class => "detail_link", :id => "main-detail-link") : "" %>
+        <td><%= gun.model %></td>
+        <td><%= gun.gun_type ? gun.gun_type.name : "" %></td>
+        <td><%= gun.serial_number %></td>
+        <td><%= gun.barrel_length %></td>
+        <td><%= gun.bore_size %></td>
+        <td><%= gun.cartridge %></td>
+        <td><%= gun.powder_type ? gun.powder_type.name : "" %></td>
+        <td><%= gun.year_manufactured %></td>
+        <td><%= gun.date_acquired %></td>
+        <!-- <td><%= gun.notes %></td> -->
+        <td><%= link_to 'Show', gun %></td>
+        <td><%= link_to 'Edit', edit_gun_path(gun) %></td>
+        <td><%= link_to 'Destroy', gun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gun', new_gun_path %>

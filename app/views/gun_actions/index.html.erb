@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gun Actions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Action type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gun_actions.each do |gun_action| %>
+      <tr>
+        <td><%= gun_action.action_type %></td>
+        <td><%= link_to 'Show', gun_action %></td>
+        <td><%= link_to 'Edit', edit_gun_action_path(gun_action) %></td>
+        <td><%= link_to 'Destroy', gun_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gun action', new_gun_action_path %>
