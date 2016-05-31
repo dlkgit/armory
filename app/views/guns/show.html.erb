@@ -17,7 +17,7 @@
 
 <p>
   <strong>Gun type:</strong>
-  <%= @gun.gun_type_id %>
+  <%= @gun.gun_type.name %>
 </p>
 
 <p>
@@ -41,13 +41,13 @@
 </p>
 
 <p>
-  <strong>Cartridge</strong>
+  <strong>Cartridge:</strong>
   <%= @gun.cartridge %>
 </p>
 
 <p>
   <strong>Powder:</strong>
-  <%= @gun.powder_type_id %>
+  <%= @gun.powder_type.name %>
 </p>
 
 <p>

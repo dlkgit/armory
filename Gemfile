@@ -8,6 +8,7 @@ gem 'rails', '4.2.1'
 # sqlite3 blows, use mysql instead
 # gem 'mysql2'
 gem 'mysql2', '~> 0.3.18'  # Change version to accommodate rails 4 bug
+gem 'pg'  # Turns out we need postgres for heroku anyway
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
